@@ -4,7 +4,7 @@ import json
 import csv
 with open('data.json', 'w') as f:
   new_data = {}
-  for i in range(1,11):  
+  for i in range(1,10001):  
     url = "https://api.opensea.io/api/v1/asset/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/%d/" % (i)
 
     response = requests.request("GET", url)
@@ -34,7 +34,7 @@ csv_writer = csv.writer(data_file)
 count = 0
  
     # Writing data of CSV file
-for i in range(1,11):     
+for i in range(1,10001):     
   csv_writer.writerow(new_data[i].values())
  
 data_file.close()
